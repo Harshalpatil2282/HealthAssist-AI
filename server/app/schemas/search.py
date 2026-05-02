@@ -35,12 +35,6 @@ class LocationInput(BaseModel):
     lat: Optional[float] = Field(None, ge=-90, le=90)
     lng: Optional[float] = Field(None, ge=-180, le=180)
 
-    @model_validator(mode="after")
-    def at_least_one_field(self) -> "LocationInput":
-        if not self.pincode and not (self.lat and self.lng):
-            raise ValueError("Provide either pincode/city or lat/lng pair")
-        return self
-
 
 class ParsedIntent(BaseModel):
     procedure_category: str
@@ -130,7 +124,7 @@ class SearchRequest(BaseModel):
     query: str = Field(..., min_length=3, max_length=QUERY_MAX_LENGTH,
                        description="Natural language health query (max 500 chars)")
     location: Optional[LocationInput] = None
-    radius_km: int = Field(25, ge=1, le=200)
+    radius_km: int = Field(25, ge=1, le=5000, description="Search radius in km. Use 999+ to disable radius filtering.")
     budget_min: Optional[int] = Field(None, ge=0)
     budget_max: Optional[int] = Field(None, ge=0)
     patient_age: Optional[int] = Field(None, ge=0, le=120)

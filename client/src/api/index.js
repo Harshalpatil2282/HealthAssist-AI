@@ -113,10 +113,19 @@ function adaptCostEstimate(cost) {
 // ═══════════════════════════════════════════════════════════
 
 export async function searchHospitals({ query, location, radius, filters }) {
-  // Build pincode from location string (if user typed a 6-digit number)
-  const pincodeMatch = location?.match(/\b(\d{6})\b/);
-  const pincode = pincodeMatch ? pincodeMatch[1] : undefined;
-  const city = !pincode && location ? location.replace('My Location (Detected)', '').trim() || undefined : undefined;
+  // Resolve location: both pincode and city name go into location.pincode
+  // (backend accepts 6-digit numerics OR city names in the same field)
+  let locationPayload = undefined;
+  if (location && !location.includes('My Location')) {
+    const trimmed = location.trim();
+    if (trimmed.length >= 2) {
+      locationPayload = { pincode: trimmed };  // backend accepts pincode OR city name here
+    }
+  }
+
+  // When using city/pincode (no GPS coords), set radius high so the backend
+  // skips the distance filter and returns all matched-city hospitals.
+  const effectiveRadius = locationPayload ? 999 : (radius || 999);
 
   // Budget conversion
   const budgetMap = {
@@ -130,8 +139,8 @@ export async function searchHospitals({ query, location, radius, filters }) {
   const payload = {
     query,
     language: 'en',
-    location: pincode ? { pincode } : city ? { city } : undefined,
-    radius_km: radius || 25,
+    location: locationPayload,
+    radius_km: effectiveRadius,
     hospital_type: filters?.hospitalType || 'both',
     patient_age: filters?.patientAge ? parseInt(filters.patientAge) : undefined,
     comorbidities: Array.isArray(filters?.comorbidities)
