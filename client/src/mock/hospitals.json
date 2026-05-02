@@ -1,0 +1,185 @@
+{
+  "hospitals": [
+    {
+      "id": "h001",
+      "rank": 1,
+      "name": "ABC Heart Institute",
+      "address": "Wardha Road, Nagpur, Maharashtra 440012",
+      "city": "Nagpur",
+      "state": "Maharashtra",
+      "distance": 5.2,
+      "rating": 4.5,
+      "reviewCount": 1247,
+      "type": "Private",
+      "accreditations": ["NABH", "JCI"],
+      "acceptsPMJAY": true,
+      "specializations": ["Cardiology", "Cardiac Surgery", "Interventional Cardiology", "Critical Care"],
+      "scores": {
+        "clinical": 82,
+        "reputation": 88,
+        "access": 65,
+        "affordability": 75,
+        "overall": 84
+      },
+      "costRange": { "min": 180000, "max": 300000 },
+      "phone": "+91-712-2345678",
+      "website": "https://abcheartinstitute.example.com",
+      "facilities": ["24/7 Emergency", "ICU (20 beds)", "Cath Lab", "OT (4)", "Blood Bank", "Pharmacy"],
+      "doctors": [
+        { "id": "d001", "name": "Dr. Rajesh Sharma", "specialization": "Interventional Cardiologist", "experience": 18, "rating": 4.7 },
+        { "id": "d002", "name": "Dr. Priya Deshmukh", "specialization": "Cardiac Surgeon", "experience": 14, "rating": 4.6 }
+      ],
+      "commonProcedures": [
+        { "name": "Angioplasty (PTCA)", "minCost": 180000, "maxCost": 300000 },
+        { "name": "Bypass Surgery (CABG)", "minCost": 250000, "maxCost": 450000 },
+        { "name": "Pacemaker Implant", "minCost": 120000, "maxCost": 220000 },
+        { "name": "Echocardiogram", "minCost": 1500, "maxCost": 3000 }
+      ],
+      "reviews": [
+        { "author": "Ramesh Patil", "city": "Nagpur", "rating": 5, "text": "Excellent care during my angioplasty. Staff was very professional and attentive.", "sentiment": "Positive", "date": "2025-11-15" },
+        { "author": "Sunita Borse", "city": "Amravati", "rating": 4, "text": "Good hospital but billing process could be more transparent. Treatment was effective.", "sentiment": "Mixed", "date": "2025-10-22" },
+        { "author": "Vikram Nair", "city": "Nagpur", "rating": 5, "text": "Dr. Sharma is outstanding. Recovered fully after bypass surgery in just 3 weeks.", "sentiment": "Positive", "date": "2025-09-10" }
+      ],
+      "coordinates": { "lat": 21.1458, "lng": 79.0882 }
+    },
+    {
+      "id": "h002",
+      "rank": 2,
+      "name": "Wockhardt Hospitals",
+      "address": "Central Avenue, Nagpur, Maharashtra 440018",
+      "city": "Nagpur",
+      "state": "Maharashtra",
+      "distance": 3.8,
+      "rating": 4.3,
+      "reviewCount": 892,
+      "type": "Private",
+      "accreditations": ["NABH"],
+      "acceptsPMJAY": false,
+      "specializations": ["Cardiology", "Orthopedics", "Neurology", "Oncology"],
+      "scores": {
+        "clinical": 78,
+        "reputation": 82,
+        "access": 71,
+        "affordability": 68,
+        "overall": 78
+      },
+      "costRange": { "min": 160000, "max": 280000 },
+      "phone": "+91-712-3456789",
+      "website": "https://wockhardt.example.com",
+      "facilities": ["24/7 Emergency", "ICU (15 beds)", "Cath Lab", "OT (3)", "Pharmacy"],
+      "doctors": [
+        { "id": "d003", "name": "Dr. Anand Kulkarni", "specialization": "Cardiologist", "experience": 22, "rating": 4.8 },
+        { "id": "d004", "name": "Dr. Meena Joshi", "specialization": "Interventional Cardiologist", "experience": 12, "rating": 4.4 }
+      ],
+      "commonProcedures": [
+        { "name": "Angioplasty (PTCA)", "minCost": 160000, "maxCost": 280000 },
+        { "name": "Bypass Surgery (CABG)", "minCost": 240000, "maxCost": 420000 },
+        { "name": "Angiography", "minCost": 18000, "maxCost": 35000 }
+      ],
+      "reviews": [
+        { "author": "Deepak Choudhary", "city": "Nagpur", "rating": 4, "text": "Good facility and experienced doctors. Waiting time is a bit long.", "sentiment": "Mixed", "date": "2025-12-01" },
+        { "author": "Laxmi Sharma", "city": "Nagpur", "rating": 5, "text": "Best cardiologist I have ever met. Highly recommend Dr. Kulkarni.", "sentiment": "Positive", "date": "2025-11-05" }
+      ],
+      "coordinates": { "lat": 21.1511, "lng": 79.0752 }
+    },
+    {
+      "id": "h003",
+      "rank": 3,
+      "name": "Government Medical College & Hospital",
+      "address": "Medical Square, Nagpur, Maharashtra 440003",
+      "city": "Nagpur",
+      "state": "Maharashtra",
+      "distance": 7.1,
+      "rating": 3.9,
+      "reviewCount": 3241,
+      "type": "Government",
+      "accreditations": [],
+      "acceptsPMJAY": true,
+      "specializations": ["Cardiology", "General Surgery", "Orthopedics", "Gynecology", "Pediatrics"],
+      "scores": {
+        "clinical": 71,
+        "reputation": 74,
+        "access": 88,
+        "affordability": 95,
+        "overall": 75
+      },
+      "costRange": { "min": 40000, "max": 120000 },
+      "phone": "+91-712-4567890",
+      "website": null,
+      "facilities": ["24/7 Emergency", "ICU (40 beds)", "OT (8)", "Blood Bank", "Pharmacy", "Dialysis"],
+      "doctors": [
+        { "id": "d005", "name": "Dr. S.K. Tiwari", "specialization": "Senior Cardiologist", "experience": 28, "rating": 4.2 }
+      ],
+      "commonProcedures": [
+        { "name": "Angioplasty (PTCA)", "minCost": 40000, "maxCost": 90000 },
+        { "name": "Angiography", "minCost": 5000, "maxCost": 15000 },
+        { "name": "Bypass Surgery (CABG)", "minCost": 80000, "maxCost": 150000 }
+      ],
+      "reviews": [
+        { "author": "Bharat Dhore", "city": "Nagpur", "rating": 4, "text": "Affordable treatment with experienced senior doctors. Some infrastructure could be improved.", "sentiment": "Mixed", "date": "2025-10-12" },
+        { "author": "Kavita Meshram", "city": "Yavatmal", "rating": 5, "text": "PMJAY covered my husband's surgery fully. Very grateful for the service.", "sentiment": "Positive", "date": "2025-08-20" }
+      ],
+      "coordinates": { "lat": 21.1605, "lng": 79.0894 }
+    },
+    {
+      "id": "h004",
+      "rank": 4,
+      "name": "Kingsway Hospitals",
+      "address": "Kingsway, Nagpur, Maharashtra 440001",
+      "city": "Nagpur",
+      "state": "Maharashtra",
+      "distance": 2.4,
+      "rating": 4.1,
+      "reviewCount": 674,
+      "type": "Private",
+      "accreditations": ["NABH"],
+      "acceptsPMJAY": true,
+      "specializations": ["Cardiology", "Gastroenterology", "Nephrology"],
+      "scores": {
+        "clinical": 74,
+        "reputation": 76,
+        "access": 82,
+        "affordability": 72,
+        "overall": 76
+      },
+      "costRange": { "min": 150000, "max": 260000 },
+      "phone": "+91-712-5678901",
+      "website": "https://kingsway.example.com",
+      "facilities": ["24/7 Emergency", "ICU (12 beds)", "OT (2)", "Pharmacy"],
+      "doctors": [
+        { "id": "d006", "name": "Dr. Pradeep Wagh", "specialization": "Cardiologist", "experience": 16, "rating": 4.3 }
+      ],
+      "commonProcedures": [
+        { "name": "Angioplasty (PTCA)", "minCost": 150000, "maxCost": 260000 },
+        { "name": "Angiography", "minCost": 15000, "maxCost": 28000 }
+      ],
+      "reviews": [
+        { "author": "Suresh Gondhale", "city": "Nagpur", "rating": 4, "text": "Smooth experience overall. PMJAY billing was handled well.", "sentiment": "Positive", "date": "2025-12-10" }
+      ],
+      "coordinates": { "lat": 21.1451, "lng": 79.0832 }
+    }
+  ],
+  "costEstimate": {
+    "query": "Angioplasty in Nagpur",
+    "age": 58,
+    "comorbidities": ["Diabetes"],
+    "confidence": 0.68,
+    "confidenceLabel": "Moderate",
+    "dataSource": "Aggregated from public hospital tariff data + PMJAY package rates",
+    "breakdown": [
+      { "item": "Procedure Cost", "min": 120000, "max": 200000 },
+      { "item": "Hospital Stay", "min": 30000, "max": 60000 },
+      { "item": "Medications", "min": 15000, "max": 30000 },
+      { "item": "Diagnostics", "min": 10000, "max": 20000 },
+      { "item": "Contingency Buffer", "min": 15000, "max": 40000 }
+    ],
+    "total": { "min": 180000, "max": 300000 },
+    "riskFlags": [
+      "Diabetes increases post-operative infection risk — contingency buffer widened",
+      "Limited pricing data availability for Nagpur private hospitals — confidence reduced",
+      "Cost may vary significantly based on stent type (bare metal vs. drug-eluting)"
+    ],
+    "pmjayEligible": true,
+    "pmjayPackageRate": 135000
+  }
+}

@@ -1,0 +1,110 @@
+version: "3.9"
+
+services:
+
+  # ── FastAPI Backend ─────────────────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: healthassist_api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://healthassist:healthassist@postgres:5432/healthassist_db
+      - REDIS_URL=redis://redis:6379/0
+      - USE_SQLITE=false
+      - APP_ENV=development
+      - DEBUG=true
+      - LOG_LEVEL=INFO
+      - ENABLE_SYNTHETIC_DATA=true
+    env_file:
+      - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./app:/app/app   # hot reload in dev
+    networks:
+      - healthassist_net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+  # ── PostgreSQL ──────────────────────────────────────────────────────────────
+  postgres:
+    image: postgres:15-alpine
+    container_name: healthassist_postgres
+    environment:
+      POSTGRES_USER: healthassist
+      POSTGRES_PASSWORD: healthassist
+      POSTGRES_DB: healthassist_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - healthassist_net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U healthassist -d healthassist_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # ── Redis ───────────────────────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: healthassist_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - healthassist_net
+    restart: unless-stopped
+    command: redis-server --save 60 1 --loglevel warning
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Celery Worker (Phase 3 — async LLM tasks) ─────────────────────────────
+  celery_worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: healthassist_celery
+    command: celery -A app.tasks worker --loglevel=info --concurrency=2
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://healthassist:healthassist@postgres:5432/healthassist_db
+      - REDIS_URL=redis://redis:6379/0
+      - ENABLE_CELERY=true
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      - postgres
+    networks:
+      - healthassist_net
+    restart: unless-stopped
+    profiles:
+      - celery   # Only start with: docker compose --profile celery up
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  healthassist_net:
+    driver: bridge

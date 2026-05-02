@@ -1,0 +1,25 @@
+package_code,package_name,icd10_code,pmjay_rate,max_episodes_per_year,body_system,includes_followup
+HBP001,Coronary Angioplasty (PTCA with stent),I25.10,120000,1,cardiovascular,true
+HBP002,Coronary Artery Bypass Grafting (CABG),I25.10,195000,1,cardiovascular,true
+HBP003,Cardiac Valve Replacement,I35.9,140000,1,cardiovascular,true
+HBP004,Pacemaker Implantation,I49.9,80000,1,cardiovascular,true
+HON001,Total Knee Replacement,M17.11,80000,2,musculoskeletal,true
+HON002,Total Hip Replacement,M16.11,90000,2,musculoskeletal,true
+HON003,Spine Surgery (Discectomy),M51.1,60000,1,musculoskeletal,true
+HON004,Fracture Fixation (ORIF),S72.009A,25000,2,musculoskeletal,false
+HNS001,Cataract Surgery (Phaco),H26.9,6500,2,ophthalmology,true
+HNS002,Glaucoma Surgery,H40.9,15000,1,ophthalmology,false
+HENT001,Tonsillectomy,J35.01,8000,1,ENT,false
+HENT002,Sinus Surgery (FESS),J32.9,12000,1,ENT,false
+HGS001,Laparoscopic Cholecystectomy,K80.20,14000,1,gastroenterology,true
+HGS002,Appendectomy,K37,8500,1,gastroenterology,true
+HGS003,Hernia Repair,K46.9,6000,1,gastroenterology,false
+HKD001,Kidney Stone (PCNL),N20.0,15000,2,nephrology,false
+HKD002,Dialysis (per session),Z99.2,400,365,nephrology,false
+HOBS001,Caesarean Section,O82,9000,2,obstetrics,true
+HOBS002,Normal Delivery,O80,1200,2,obstetrics,true
+HOBS003,Hysterectomy,N81.4,15000,1,obstetrics,true
+HONCO001,Chemotherapy (per cycle),Z51.11,12000,6,oncology,false
+HONCO002,Radiotherapy,Z51.0,22000,1,oncology,false
+HNEURO001,Stroke Management,I63.9,25000,1,neurology,true
+HNEURO002,Craniotomy (Brain Surgery),G35,90000,1,neurology,true

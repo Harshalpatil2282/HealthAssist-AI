@@ -1,0 +1,62 @@
+import pandas as pd
+import warnings
+warnings.filterwarnings('ignore')
+
+hosp = pd.read_excel('app/data/seeds/hospital_dataset_1500_rows.xlsx')
+docs = pd.read_excel('app/data/seeds/doctors_realistic.xlsx')
+revs = pd.read_excel('app/data/seeds/reviews_realistic.xlsx')
+locs = pd.read_excel('app/data/seeds/location_dataset.xlsx')
+dis  = pd.read_excel('app/data/seeds/diseases_realistic.xlsx')
+
+hosp_ids     = set(hosp['hospital_id'].astype(str))
+doc_hosp_ids = set(docs['hospital_id'].astype(str))
+rev_hosp_ids = set(revs['hospital_id'].astype(str))
+
+print("=== HOSPITALS ===")
+print(f"  Rows: {len(hosp)}")
+print(f"  ID range: {hosp['hospital_id'].min()} - {hosp['hospital_id'].max()}")
+print(f"  Unique cities: {hosp['city'].nunique()}")
+print(f"  States: {sorted(hosp['state'].unique())}")
+print(f"  Types: {hosp['hospital_type'].value_counts().to_dict()}")
+print(f"  Accreditation: {hosp['accreditation'].value_counts().to_dict()}")
+print(f"  PMJAY (accepts_pmjay): {hosp['accepts_pmjay'].value_counts().to_dict()}")
+print(f"  CGHS (empanelled_cghs): {hosp['empanelled_cghs'].value_counts().to_dict()}")
+print(f"  Emergency: {hosp['emergency_services'].value_counts().to_dict()}")
+print(f"  Rating range: {hosp['google_rating'].min()} - {hosp['google_rating'].max()}")
+print(f"  Tier values: {hosp['tier'].value_counts().to_dict()}")
+
+print()
+print("=== DOCTORS ===")
+print(f"  Rows: {len(docs)}")
+print(f"  Doctor hospital_ids in hospital set: {len(doc_hosp_ids & hosp_ids)}/{len(doc_hosp_ids)}")
+print(f"  Top specializations: {docs['specialization'].value_counts().head(10).to_dict()}")
+print(f"  Experience range: {docs['experience_years'].min()} - {docs['experience_years'].max()}")
+
+print()
+print("=== REVIEWS ===")
+print(f"  Rows: {len(revs)}")
+print(f"  Review hospital_ids in hospital set: {len(rev_hosp_ids & hosp_ids)}/{len(rev_hosp_ids)}")
+print(f"  Rating distribution: {revs['rating'].value_counts().sort_index().to_dict()}")
+print(f"  Sentiment score range: {revs['sentiment_score'].min()} - {revs['sentiment_score'].max()}")
+
+print()
+print("=== LOCATIONS ===")
+print(f"  Rows: {len(locs)}")
+print(f"  Unique cities: {locs['city'].nunique()}")
+print(f"  Unique states: {locs['state'].nunique()}")
+print(f"  Sample pincodes: {locs['pincode'].head(5).tolist()}")
+
+print()
+print("=== DISEASES ===")
+print(f"  Rows: {len(dis)}")
+print(f"  Sample diseases: {dis['disease_name'].head(20).tolist()}")
+print(f"  Sample procedures: {dis['related_procedure'].head(20).tolist()}")
+
+# Overlap check between location pincodes and hospital pincodes
+loc_pins  = set(locs['pincode'].astype(str))
+hosp_pins = set(hosp['pincode'].astype(str))
+print()
+print(f"=== PINCODE OVERLAP ===")
+print(f"  Locations pincodes: {len(loc_pins)}")
+print(f"  Hospital pincodes: {len(hosp_pins)}")
+print(f"  Overlap: {len(loc_pins & hosp_pins)}")

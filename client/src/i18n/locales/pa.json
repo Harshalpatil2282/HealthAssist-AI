@@ -1,0 +1,38 @@
+{
+  "nav": { "search": "ਖੋਜ", "pmjay": "ਪੀਐਮਜੇਏਵਾਈ", "drugs": "ਦਵਾਈਆਂ", "telemedicine": "ਟੈਲੀਮੈਡੀਸਿਨ", "about": "ਸਾਡੇ ਬਾਰੇ", "emergency": "ਐਮਰਜੈਂਸੀ 112" },
+  "hero": {
+    "headline": "ਆਪਣਾ ਹਸਪਤਾਲ ਜਾਣੋ।",
+    "headline2": "ਆਪਣੀ ਲਾਗਤ ਜਾਣੋ।",
+    "headline3": "ਜਾਣ ਤੋਂ ਪਹਿਲਾਂ।",
+    "subheadline": "ਹਰ ਭਾਰਤੀ ਲਈ AI-ਸੰਚਾਲਿਤ ਸਿਹਤ ਨੇਵੀਗੇਸ਼ਨ — ਤੁਹਾਡੀ ਭਾਸ਼ਾ ਵਿੱਚ, ਤੁਹਾਡੇ ਬਜਟ ਵਿੱਚ",
+    "cta_primary": "ਮੁਫ਼ਤ ਖੋਜ ਸ਼ੁਰੂ ਕਰੋ",
+    "cta_secondary": "ਪੀਐਮਜੇਏਵਾਈ ਯੋਗਤਾ ਜਾਂਚੋ",
+    "language_label": "8 ਭਾਸ਼ਾਵਾਂ ਵਿੱਚ ਉਪਲਬਧ"
+  },
+  "search": {
+    "placeholder": "ਆਪਣੀ ਸਥਿਤੀ ਜਾਂ ਪ੍ਰਕਿਰਿਆ ਦੱਸੋ... ਜਿਵੇਂ 'ਪੁਣੇ ਵਿੱਚ ਗੋਡੇ ਦੀ ਸਰਜਰੀ'",
+    "button": "ਖੋਜੋ",
+    "location_placeholder": "ਪਿੰਨਕੋਡ ਜਾਂ ਸ਼ਹਿਰ",
+    "filters": "ਫਿਲਟਰ",
+    "budget": "ਬਜਟ ਸੀਮਾ",
+    "age": "ਮਰੀਜ਼ ਦੀ ਉਮਰ",
+    "quick_searches": "ਆਮ ਖੋਜਾਂ",
+    "radius": "ਖੋਜ ਘੇਰਾ"
+  },
+  "emergency": { "banner": "ਇਹ ਐਮਰਜੈਂਸੀ ਵਰਗਾ ਲੱਗਦਾ ਹੈ। ਤੁਰੰਤ 112 ਕਾਲ ਕਰੋ।", "call_112": "112 ਕਾਲ ਕਰੋ" },
+  "results": {
+    "showing": "{{count}} ਹਸਪਤਾਲ ਦਿਖਾ ਰਿਹਾ ਹੈ",
+    "best_match": "ਸਭ ਤੋਂ ਵਧੀਆ ਮੇਲ",
+    "hospitals_tab": "ਹਸਪਤਾਲ",
+    "cost_tab": "ਖਰਚ ਅਨੁਮਾਨ",
+    "download_pdf": "PDF ਰਿਪੋਰਟ ਡਾਊਨਲੋਡ ਕਰੋ",
+    "disclaimer": "ਕੇਵਲ ਯੋਜਨਾਬੰਦੀ ਲਈ। ਹਸਪਤਾਲ ਨਾਲ ਪੁਸ਼ਟੀ ਕਰੋ।",
+    "km_away": "ਕਿ.ਮੀ. ਦੂਰ"
+  },
+  "cost": { "procedure": "ਪ੍ਰਕਿਰਿਆ ਖਰਚ", "stay": "ਹਸਪਤਾਲ ਵਿੱਚ ਰਹਿਣਾ", "medications": "ਦਵਾਈਆਂ", "diagnostics": "ਜਾਂਚ", "contingency": "ਐਮਰਜੈਂਸੀ ਬਫ਼ਰ", "total": "ਕੁੱਲ ਅਨੁਮਾਨ" },
+  "pmjay": { "title": "ਪੀਐਮਜੇਏਵਾਈ ਯੋਗਤਾ ਜਾਂਚਕਰਤਾ", "check_btn": "ਯੋਗਤਾ ਜਾਂਚੋ", "eligible": "ਸੰਭਾਵਤ ਯੋਗ", "not_eligible": "ਯੋਗ ਨਹੀਂ", "disclaimer": "ਇਹ ਇੱਕ ਸੰਕੇਤਕ ਜਾਂਚ ਹੈ। pmjay.gov.in 'ਤੇ ਅਧਿਕਾਰਤ ਤਸਦੀਕ।" },
+  "drugs": { "title": "ਜੈਨਰਿਕ ਦਵਾਈ ਤੁਲਨਾਕਾਰ", "subtitle": "ਜੈਨਰਿਕ ਵਿਕਲਪਾਂ ਨਾਲ 60-80% ਬਚਾਓ", "search_placeholder": "ਬ੍ਰਾਂਡ ਜਾਂ ਜੈਨਰਿਕ ਨਾਮ ਨਾਲ ਖੋਜੋ...", "savings_banner": "ਜੈਨਰਿਕ 'ਤੇ ਜਾਓ ਅਤੇ 80% ਤੱਕ ਬਚਾਓ" },
+  "telemedicine": { "title": "ਟੈਲੀਮੈਡੀਸਿਨ ਅਤੇ ਲੱਛਣ ਟ੍ਰਾਈਏਜ", "subtitle": "ਆਪਣੇ ਲੱਛਣਾਂ ਦਾ AI ਮੁਲਾਂਕਣ ਕਰੋ", "select_symptoms": "1. ਲੱਛਣ ਚੁਣੋ", "severity_title": "2. ਲੱਛਣਾਂ ਦੀ ਗੰਭੀਰਤਾ", "assess_btn": "AI ਟ੍ਰਾਈਏਜ ਮੁਲਾਂਕਣ", "consult_btn": "ਸਲਾਹ ਕਰੋ", "available": "ਔਨਲਾਈਨ", "offline": "ਔਫਲਾਈਨ", "book_slot": "ਸਲੌਟ ਬੁੱਕ ਕਰੋ", "consultation_fee": "ਸਲਾਹ ਫੀਸ" },
+  "footer": { "disclaimer": "ਕੇਵਲ ਯੋਜਨਾਬੰਦੀ ਉਦੇਸ਼ਾਂ ਲਈ। ਇਹ ਡਾਕਟਰੀ ਨਿਦਾਨ ਸਾਧਨ ਨਹੀਂ ਹੈ।", "about": "ਸਾਡੇ ਬਾਰੇ", "privacy": "ਗੋਪਨੀਯਤਾ ਨੀਤੀ", "contact": "ਸੰਪਰਕ" },
+  "common": { "loading": "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...", "error": "ਕੁਝ ਗਲਤ ਹੋਇਆ", "no_results": "ਕੋਈ ਨਤੀਜੇ ਨਹੀਂ", "back": "ਵਾਪਸ", "close": "ਬੰਦ ਕਰੋ", "rupee": "₹", "private": "ਨਿੱਜੀ", "government": "ਸਰਕਾਰੀ" }
+}
