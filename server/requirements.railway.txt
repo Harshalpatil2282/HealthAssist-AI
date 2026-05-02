@@ -1,0 +1,42 @@
+# HealthAssist Backend — Railway Production Requirements
+# Stripped of dev/test dependencies and heavy optional libs
+
+# --- Web Framework ---
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+
+# --- Pydantic v2 + Settings ---
+pydantic==2.7.1
+pydantic-settings==2.2.1
+
+# --- Database (SQLite async for Railway free tier) ---
+sqlalchemy==2.0.30
+aiosqlite==0.20.0
+alembic==1.13.1
+
+# --- Authentication ---
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# --- NLP (lightweight) ---
+langdetect==1.0.9
+rapidfuzz==3.9.1
+
+# --- Data ---
+pandas==2.2.2
+openpyxl==3.1.2
+xlrd==2.0.1
+
+# --- HTTP Clients ---
+httpx==0.27.0
+
+# --- Geo ---
+geopy==2.4.1
+
+# --- Utilities ---
+python-dotenv==1.0.1
+structlog==24.1.0
+orjson==3.10.3
+tenacity==8.3.0
+slowapi==0.1.9

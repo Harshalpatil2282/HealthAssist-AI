@@ -1,0 +1,26 @@
+# HealthAssist Backend — Railway Dockerfile
+# Lightweight single-stage build (no spacy, no redis, no celery)
+
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# System dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY requirements.railway.txt .
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.railway.txt
+
+# Copy application source
+COPY . .
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=15s --start-period=40s --retries=3 \
+    CMD curl -f http://localhost:${PORT:-8000}/health || exit 1
+
+# Railway injects $PORT — must bind to it
+CMD uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}
