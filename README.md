@@ -228,6 +228,9 @@ Emergency Detector         Provider Ranking Engine
 | Phase 4 | 🔜 Planned | Telemedicine, drug loans, ASHA worker portal |
 
 ---
+<img width="1366" height="603" alt="image" src="https://github.com/user-attachments/assets/d42221cd-2422-4dd1-a801-6860463e10f7" />
+<img width="1361" height="607" alt="image" src="https://github.com/user-attachments/assets/d875c26f-f284-4b2a-95c6-206d97e44913" />
+
 
 ## 📄 License
 
